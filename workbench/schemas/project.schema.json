@@ -1,0 +1,12 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object",
+  "required":["project","audio_policy","characters","assets","segments"],
+  "properties":{
+    "project":{"type":"object","required":["id","title","aspect_ratio","duration_sec"],"properties":{"id":{"type":"string"},"title":{"type":"string"},"aspect_ratio":{"const":"9:16"},"duration_sec":{"type":"integer","minimum":5}}},
+    "audio_policy":{"type":"object","required":["music","allow_only"],"properties":{"music":{"const":false},"allow_only":{"type":"array","items":{"type":"string"}}}},
+    "characters":{"type":"array","items":{"type":"object","required":["character_id","face_lock_id","adult"],"properties":{"character_id":{"type":"string"},"face_lock_id":{"type":"string"},"wardrobe_lock_id":{"type":"string"},"adult":{"const":true}}}},
+    "assets":{"type":"array","items":{"type":"object","required":["asset_id","kind","path"],"properties":{"asset_id":{"type":"string"},"kind":{"enum":["character","scene","product","expression"]},"path":{"type":"string"},"approved":{"type":"boolean"}}}},
+    "segments":{"type":"array","items":{"type":"object","required":["segment_id","start_sec","end_sec","visual_prompt","dialogue","audio","picture_slots","continuity"],"properties":{"segment_id":{"type":"string"},"start_sec":{"type":"number"},"end_sec":{"type":"number"},"visual_prompt":{"type":"string","minLength":1},"dialogue":{"type":"object","required":["lines"],"properties":{"lines":{"type":"array","items":{"type":"string"}},"speaker":{"type":"string"},"delivery":{"type":"string"}}},"audio":{"type":"object","required":["music"],"properties":{"music":{"const":false},"effects":{"type":"array"},"speech":{"type":"array"}}},"picture_slots":{"type":"array","items":{"type":"object","required":["slot","asset_id"],"properties":{"slot":{"type":"string"},"asset_id":{"type":"string"}}}},"continuity":{"type":"object","required":["before","after","locked"],"properties":{"before":{"type":"string"},"after":{"type":"string"},"locked":{"type":"array","items":{"type":"string"}}}}}}}
+  }
+}

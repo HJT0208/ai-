@@ -1,0 +1,7 @@
+{
+  "project":{"id":"demo","title":"无品牌广告短剧模板","aspect_ratio":"9:16","duration_sec":5},
+  "audio_policy":{"music":false,"allow_only":["dialogue","breath"]},
+  "characters":[{"character_id":"adult_a","face_lock_id":"face_a_v1","wardrobe_lock_id":"wardrobe_a_v1","adult":true}],
+  "assets":[{"asset_id":"char_a_full","kind":"character","path":"assets/char_a_full.png","approved":false}],
+  "segments":[{"segment_id":"A01","start_sec":0,"end_sec":5,"visual_prompt":"成年人物站在暖色室内，保持face_lock_v1的五官与发型，镜头从中景缓慢推近，人物先看向门口再回望镜头，动作在片尾停稳。画面无字幕、无品牌字样、无水印。","dialogue":{"lines":[],"speaker":"","delivery":""},"audio":{"music":false,"effects":[],"speech":[]},"picture_slots":[{"slot":"Picture0","asset_id":"char_a_full"}],"continuity":{"before":"人物已站定","after":"人物停在回望镜头状态","locked":["face_lock_v1","wardrobe_a_v1","无配乐","无对白"]}}]
+}

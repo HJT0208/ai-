@@ -1,0 +1,12 @@
+name: codex-ai-ad-drama-workbench
+version: 1
+entrypoint: SKILL.md
+language: zh-CN
+purpose: 编译可供Codex读取的AI广告短剧工作台
+triggers:
+  - AI广告短剧
+  - 5秒分段
+  - 图片槽位
+  - 人物面部锁定
+  - 纯对白分区
+  - 无配乐视频提示词

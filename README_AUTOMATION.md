@@ -64,3 +64,7 @@ python ai90\ai90_app.py
 ```
 
 在界面填写剧情、产品图片、云端 ComfyUI API 地址、工作流 JSON 和输出目录。取消“提交到 ComfyUI”时只生成提示词；勾选后才提交任务。界面实时显示运行器输出，运行器不会取消或删除已有任务。需要打包成 exe 时可使用 `pyinstaller --onefile --windowed ai90\ai90_app.py`（需在 Windows 安装 PyInstaller）。
+
+## 下载 Windows EXE
+
+仓库已加入 GitHub Actions 自动打包配置。打开仓库的 **Actions** → **Build AI90 Windows App** → **Run workflow**，等待完成后进入运行记录，在 **Artifacts** 下载 `AI90-Windows-App`。解压后双击 `AI90_广告漫剧运行器.exe` 即可打开详细界面。

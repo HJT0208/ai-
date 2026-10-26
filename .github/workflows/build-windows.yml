@@ -1,0 +1,20 @@
+name: Build AI90 Windows App
+on:
+  workflow_dispatch:
+  push:
+    tags: ['v*']
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.12'}
+      - name: Build exe
+        run: |
+          python -m pip install --upgrade pip pyinstaller
+          pyinstaller --noconfirm --clean --onefile --windowed --name AI90_广告漫剧运行器 ai90/ai90_app.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: AI90-Windows-App
+          path: dist/AI90_广告漫剧运行器.exe
